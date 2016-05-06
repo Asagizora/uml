@@ -1,0 +1,44 @@
+#+BEGIN_SRC plantuml  :file ../img/plantuml-homework2-1.png
+class OneBook{
+number: String
+}
+class Book{
+name: String
+author: String
+ISBN: String
+}
+class Reader{
+name: String
+adress: String
+cards: Integer
+borrow()
+return()
+}
+class Card{
+book: String
+retDate: Date
+setDate()
+}
+class Library
+Reader -> Card
+Card --> OneBook
+Book o-up- OneBook
+Library o-right- Book
+Reader --> Library :borrow() & return()
+#+END_SRC
+
+#+BEGIN_SRC plantuml :file ../img/plantuml-homework2-2.png
+  left to right direction
+  actor student
+  actor teacher
+  student -- (regist)
+  student -- (request course catalog)
+  student -- (obtain course imformation)
+  student -- (select course)
+  student -- (add or drop course): first 2 weeks
+  student -- (view all electronic report cards): at the end of the semeter
+  teacher -- (regist)
+  teacher -- (indicate course)
+  teacher -- (see students signed up for their course offerings)
+  teacher -- (record the grades)
+#+END_SRC

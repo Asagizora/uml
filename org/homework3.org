@@ -1,0 +1,77 @@
+#+TITLE: Homework 3
+#+AUTHOR: Lyon-XD
+
+#+BEGIN_SRC plantuml :file ../img/plantuml-homework3-1.png
+actor student
+participant "Course Regitration\nSystem" as CRS #99ff99
+participant "Billing system" as BS #FF5809
+actor professor
+student -> CRS: Request course catalog
+CRS --> student: Response
+student -> CRS: Obtain the course information
+CRS --> student: Information about each course
+professor -> CRS: Indicate which course they want to teache
+CRS --> professor: Students sighed up for their course offerings
+professor -> CRS: Record the grades for the students in each class
+
+group Before coming semester
+  student -> CRS: Select four course
+  student -> CRS: Indicate two alternate choices
+  end
+group The first or second if classes for the semester
+  CRS -> CRS: Regitration process closes
+  CRS --> student: Notify the cancell of classes 
+  CRS --> student: Remove cancelled classes from schedules
+  CRS -> BS: All students enrollments
+  BS --> student: Bill for the semester
+  end
+group The first two weeks of the semester
+  student -> CRS: Alter their course schedules(add or drop courses)
+  CRS -> BS: Changes in schedules
+  BS --> student: updated bill
+  end
+group The end of the semester
+  student -> CRS: Login 
+  CRS --> student: Report card
+  end
+#+END_SRC
+
+#+BEGIN_SRC plantuml :file ../img/plantuml-homework3-2.png
+left to right direction
+class Student{
+classes: String[]
+grade: Number
+name: String
+id: Integer
+selectClass()
+removeClass()
+getData()
+}
+
+class SystemDB
+
+class Teacher{
+classes: String[]
+studentgrades: Number[]
+setGrade()
+selectClass()
+getData()
+}
+
+class BillingSystem{
+bill: classes[]
+getClassData()
+createBill()
+updateBill()
+sendBill()
+}
+
+Student -- SystemDB: selectClass()
+Student -- SystemDB: removeClass()
+Student -- SystemDB: getData()
+Teacher -- SystemDB: selectClass()
+Teacher -- SystemDB: setGrade()
+Teacher -- SystemDB: getData()
+BillingSystem -- Student: sendBill()
+BillingSystem -- SystemDB: getClassData()
+#+END_SRC

@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-04-06 三 17:24 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Lyon-XD" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline15">1. 顺序图（Sequence Diagram）</a>
+<ul>
+<li><a href="#orgheadline1">1.1. 简单示例</a></li>
+<li><a href="#orgheadline2">1.2. 注释语句</a></li>
+<li><a href="#orgheadline3">1.3. 使用非字母的参与者名称（Use non-letters in participants）</a></li>
+<li><a href="#orgheadline4">1.4. 发送消息给自己（Message to Self）</a></li>
+<li><a href="#orgheadline5">1.5. 改变箭头的样式（Change arrow style）</a></li>
+<li><a href="#orgheadline6">1.6. 改变箭头的颜色（Change arrow color）</a></li>
+<li><a href="#orgheadline7">1.7. 消息序号（Message sequence numbering）</a></li>
+<li><a href="#orgheadline8">1.8. 标题</a></li>
+<li><a href="#orgheadline9">1.9. 图形图例（Legend the diagram）</a></li>
+<li><a href="#orgheadline10">1.10. 分割图形（Splitting diagrams）</a></li>
+<li><a href="#orgheadline11">1.11. 消息分组（Grouping message）</a></li>
+<li><a href="#orgheadline12">1.12. 消息注解（Notes on messages）</a></li>
+<li><a href="#orgheadline13">1.13. 一些其他的注解方式（Some other notes）</a></li>
+<li><a href="#orgheadline14">1.14. 使用 HTML 进行格式化（Formatting using HTML）</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline19">2. 用例图（Use Case Diagram）</a>
+<ul>
+<li><a href="#orgheadline16">2.1. 用例（Usecase）</a></li>
+<li><a href="#orgheadline17">2.2. 参与者（Actors）</a></li>
+<li><a href="#orgheadline18">2.3. 示例</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline21">3. 类图（Class Diagram）</a>
+<ul>
+<li><a href="#orgheadline20">3.1. 示例 1</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline42">4. 活动图（Activity Diagram）</a>
+<ul>
+<li><a href="#orgheadline22">4.1. 简单活动（Simple Activity）</a></li>
+<li><a href="#orgheadline23">4.2. 带标注的箭头（Label on arrows）</a></li>
+<li><a href="#orgheadline24">4.3. 改变箭头的方向（Changing arrow direction）</a></li>
+<li><a href="#orgheadline25">4.4. 分支（Branches）</a></li>
+<li><a href="#orgheadline26">4.5. 多分支（More on Branches）</a></li>
+<li><a href="#orgheadline27">4.6. 同步块（Synchronization）</a></li>
+<li><a href="#orgheadline28">4.7. 长文本的活动描述（Long activity description）</a></li>
+<li><a href="#orgheadline29">4.8. 注释（Notes）</a></li>
+<li><a href="#orgheadline30">4.9. 分区（Partition）</a></li>
+<li><a href="#orgheadline31">4.10. 图形标题（Title the diagram）</a></li>
+<li><a href="#orgheadline32">4.11. 皮肤（Skinparam）</a></li>
+<li><a href="#orgheadline33">4.12. 完整示例（Complete Example）</a></li>
+<li><a href="#orgheadline34">4.13. 活动图 Beta</a></li>
+<li><a href="#orgheadline35">4.14. 条件符号（Conditional）</a></li>
+<li><a href="#orgheadline36">4.15. 重复循环（Repeat Loop）</a></li>
+<li><a href="#orgheadline37">4.16. 条件循环（While Loop）</a></li>
+<li><a href="#orgheadline38">4.17. 并行处理（Parallel Processing）</a></li>
+<li><a href="#orgheadline39">4.18. 注解的文本样式（Notes）</a></li>
+<li><a href="#orgheadline40">4.19. 颜色（Color）</a></li>
+<li><a href="#orgheadline41">4.20. 完整示例（Complete Example）</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline15" class="outline-2">
+<h2 id="orgheadline15"><span class="section-number-2">1</span> 顺序图（Sequence Diagram）</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> 简单示例</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+顺序图用 -&gt; , &#x00ad;-&gt;, &lt;-, &lt;&#x00ad;- 来绘制参与者（Participants）之 间的消息（Message）。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s1.png" alt="plantuml-quickstart-s1.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> 注释语句</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+以单引号开始头行，即是一个单行注释。多行注释可以使用"/'"表 示注释内容的开始，然后使用"'/"来表示注释内容的结束。<br  />
+申明参与者<br  />
+申明参与者，可以使用 participant 关键词，也可以使用下面的参与者 分类关键词来申明参与者：<br  />
+</p>
+
+<ul class="org-ul">
+<li>actor<br  /></li>
+<li>boundary<br  /></li>
+<li>control<br  /></li>
+<li>entity<br  /></li>
+<li>database<br  /></li>
+</ul>
+
+<p>
+不同的参与者类型，其图标也是不一样的。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s2.png" alt="plantuml-quickstart-s2.png" /><br  />
+</p>
+</div>
+
+<p>
+使用 as 关键词可以为参与者起一个别名，这样在对引用长名的参与者时， 会方便很多。在参与者申明语句后行尾可以追加背景色的设置，只要把标准 的 HTML 颜色值 写在后面就行了。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s3.png" alt="plantuml-quickstart-s3.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> 使用非字母的参与者名称（Use non-letters in participants）</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+针对非字母的参与者名，我们可以使用双引号，同样也可以为比较长的名字 起个别名，方法同上使用 as 关键词。<br  />
+使用上面的关键词来申明参与者，是一种显示申明；而采用引号来申明参与 者则是一种隐示申明方法，它不需要专门的位置去定义。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s4.png" alt="plantuml-quickstart-s4.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.4</span> 发送消息给自己（Message to Self）</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+一个参与者可以给自己发送消息，消息名如果需要有多行文本，可以用 \n 来表示换行。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s5.png" alt="plantuml-quickstart-s5.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">1.5</span> 改变箭头的样式（Change arrow style）</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+在用例图里可以通过以下方式来改变箭头的样式：<br  />
+</p>
+
+<p>
+使用 \ 或 / 来替换 &lt; 或 &gt; 可以让箭头只显示上半部分或下半 部分。<br  />
+重复输入箭头或斜杠（ &gt;&gt; // ），用来绘制空心箭头。<br  />
+使用双横线 &#x00ad;- 替代 - 可以用来绘制点线。<br  />
+在箭头后面加个 o 可以在箭头前绘制一个圆圈。<br  />
+</p>
+
+<p>
+使用 &lt;-&gt; 可用来绘制双向箭头。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s6.png" alt="plantuml-quickstart-s6.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">1.6</span> 改变箭头的颜色（Change arrow color）</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+要改变箭头的颜色，可以使用 HTML 颜色符号，参看下面的例子：<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s7.png" alt="plantuml-quickstart-s7.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">1.7</span> 消息序号（Message sequence numbering）</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+关键词 autonumber 用来给自动的给消息添加上序号。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s8.png" alt="plantuml-quickstart-s8.png" /><br  />
+</p>
+</div>
+
+<p>
+如果需要指定一个起始号码，可以直接在 autonumber 后面加个数字就行 了，如果要设置自增量，再在后面加一个数字就行了（autonumber start increment）。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s9.png" alt="plantuml-quickstart-s9.png" /><br  />
+</p>
+</div>
+
+<p>
+我们也可以为序号指定数字格式，这个格式化的过程实际上是 Java 类 DecimalFormat 来执行的（0 表示数字， # 缺省补零位数）。<br  />
+</p>
+
+<p>
+同样的，也可以使用一些 HTML 标签来控制数字的样式。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s10.png" alt="plantuml-quickstart-s10.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">1.8</span> 标题</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+要给图形加一个标题可以用 title 关键词来设置。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s11.png" alt="plantuml-quickstart-s11.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><span class="section-number-3">1.9</span> 图形图例（Legend the diagram）</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+使用 legend 和 end legend 关键词可以设置图形的图例。图例可以设 为左对齐、右对齐和居中对齐。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s12.png" alt="plantuml-quickstart-s12.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">1.10</span> 分割图形（Splitting diagrams）</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+关键词 newpage 是用来把图形分割成几个图片的。每一个被分割出来的 图片可以看作是一个新的页面（new page），如果要给新的页面添加一 个标题，可以紧跟在关键词 newpage 之后来设置。<br  />
+</p>
+
+<p>
+使用这个方法可以方便的在 Word 里把比较长的图形分别打印到几个不同的页 面上（有点分页符的概念）。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s13.png" alt="plantuml-quickstart-s13.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">1.11</span> 消息分组（Grouping message）</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+有时候可能需要对消息进行分组，那么可以使用下面的关键词来实现：<br  />
+</p>
+
+<p>
+alt/else<br  />
+opt<br  />
+loop<br  />
+par<br  />
+break<br  />
+critical<br  />
+group, 这个关键词后面的文字会作为组名显示在图形上<br  />
+</p>
+
+<p>
+上面的关键词后可以添加一些文本用来显示在头部（注：group 除外，因 为它后面的文本用来显示在组名称的位置）。在组嵌套组的结构里可以用关 键词 end 来关闭组或者说是表示一个组符号的结束符（类似 if/endif）。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s14.png" alt="plantuml-quickstart-s14.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">1.12</span> 消息注解（Notes on messages）</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+我们可能经常会在消息的左边或右边使用注解，要添加注解，只要使用 note left 或 note right 关键词就可以了。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s15.png" alt="plantuml-quickstart-s15.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">1.13</span> 一些其他的注解方式（Some other notes）</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+通过使用关键词 note left of，note right of 或 note over， 我们还可以把注解放置在与之相关的参与者的左边或右边，或下方。<br  />
+</p>
+
+<p>
+通过改变注解的背景色，我们还可以高亮一个注解文本块。<br  />
+</p>
+
+<p>
+如果要使用多行注解，可以使用关键词 end note 来表示注解的结束。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s16.png" alt="plantuml-quickstart-s16.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14"><span class="section-number-3">1.14</span> 使用 HTML 进行格式化（Formatting using HTML）</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+我们可以使用少量的 HTML 标签来格式化文本：<br  />
+</p>
+
+<p>
+&lt;b&gt; 加粗文本<br  />
+&lt;u&gt; 或 &lt;u:#AAAAAA&gt; 或 &lt;u:colorName&gt; 用来加下划线<br  />
+&lt;i&gt; 斜体<br  />
+&lt;s&gt; 或 &lt;s:#AAAAAA&gt; 或 &lt;s:colorName&gt; 用来加删除线<br  />
+&lt;w&gt; 或 &lt;w:#AAAAAA&gt; 或 &lt;w:colorName&gt; 用来加波浪线<br  />
+&lt;color:#AAAAAA&gt; 或 &lt;color:colorName&gt; 用来设置文本颜色<br  />
+&lt;back:#AAAAAA&gt; 或 &lt;back:colorName&gt; 用来设置背景色<br  />
+&lt;size:nn&gt; 设置字体大小<br  />
+&lt;img src="file"&gt; 或 &lt;img:file&gt; 用来添加图片，图片文件必须 是可以访问得到才行。<br  />
+</p>
+
+<p>
+&lt;img src="<a href="http://url/">http://url/</a>"&gt; 或 &lt;img:<a href="http://url/">http://url/</a>&gt; 用来添加一个互 联网图片，同样的图片地址必须是可用的才行。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-s17.png" alt="plantuml-quickstart-s17.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-2">
+<h2 id="orgheadline19"><span class="section-number-2">2</span> 用例图（Use Case Diagram）</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16"><span class="section-number-3">2.1</span> 用例（Usecase）</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+用例可以用一对小括号括起来表示，也可以使用 usecase 关键词来定义。 用例也可以通过使用 as 关键词来设置别名，在建立关系的时候可以使用 别名。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-u1.png" alt="plantuml-quickstart-u1.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17"><span class="section-number-3">2.2</span> 参与者（Actors）</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+定义参与者时，可以把参与者的名称放在两个冒号的中间，也可以用 actor 关键词来定义参与者。同样参与着也可以使用别名。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-u2.png" alt="plantuml-quickstart-u2.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">2.3</span> 示例</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-u99.png" alt="plantuml-quickstart-u99.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21"><span class="section-number-2">3</span> 类图（Class Diagram）</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">3.1</span> 示例 1</h3>
+</div>
+</div>
+
+<div id="outline-container-orgheadline42" class="outline-2">
+<h2 id="orgheadline42"><span class="section-number-2">4</span> 活动图（Activity Diagram）</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">4.1</span> 简单活动（Simple Activity）</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+在活动图中，你可以使用 (*) 来表示活动开始点和结束点。使用 &#x2013;&gt; 来表示箭头。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a1.png" alt="plantuml-quickstart-a1.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">4.2</span> 带标注的箭头（Label on arrows）</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+缺省情况下，活动图的箭头是没有标注的。但我们可以通过方括号 [labels] 来设置标注，只要把它放在箭头定义的后面就可以了。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a2.png" alt="plantuml-quickstart-a2.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24"><span class="section-number-3">4.3</span> 改变箭头的方向（Changing arrow direction）</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+我们可以使用 -&gt; 创建一个水平箭头，也可以通过下面的方式来改变箭头 的方向：<br  />
+</p>
+
+<p>
+-down-&gt; 向下（这个是默认的，等同于 =–&gt;=）<br  />
+-right-&gt; 向右<br  />
+-left-&gt; 向左<br  />
+-up-&gt; 向上<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a3.png" alt="plantuml-quickstart-a3.png" /><br  />
+</p>
+</div>
+
+<p>
+在描述箭头时，up|down|left|right 这几个单词的写法可以简化， 用单词开头的一个或两个字母来替换就行了，比如 -down-&gt; 也可以写成 -d-&gt; 或者 -do-&gt; 。<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25"><span class="section-number-3">4.4</span> 分支（Branches）</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+在 PlantUML 里，我们可以使用 if/then/else 关键词来定义分支。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a4.png" alt="plantuml-quickstart-a4.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">4.5</span> 多分支（More on Branches）</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+直接给例子：<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a5.png" alt="plantuml-quickstart-a5.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27"><span class="section-number-3">4.6</span> 同步块（Synchronization）</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+同步块可以用“=== code ===”来表示。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a6.png" alt="plantuml-quickstart-a6.png" /><br  />
+</p>
+</div>
+
+<p>
+一个小实例<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a7.png" alt="plantuml-quickstart-a7.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28"><span class="section-number-3">4.7</span> 长文本的活动描述（Long activity description）</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+在定义活动的时候，有时候需要用多行文字来描述这个活动，这时我们可以 在描述里添加换行符 \n，也可以使用少量的 HTML 标签。<br  />
+</p>
+
+<p>
+以下是可以使用的 HTML 标签：<br  />
+</p>
+
+<p>
+&lt;b&gt;<br  />
+&lt;i&gt;<br  />
+&lt;font size="nn"&gt; or &lt;size:nn&gt; to change font size<br  />
+&lt;font color="#AAAAAA"&gt; or &lt;font color="colorName"&gt;<br  />
+&lt;color:#AAAAAA&gt; or &lt;color:colorName&gt;<br  />
+&lt;img:file.png&gt; to include an image<br  />
+</p>
+
+<p>
+针对较长文本描述活动，可以起一个较短别名（如："long text" as A1）， 在图形定义脚本中可以直接使用别名，参看下面的例子中的 A1。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a8.png" alt="plantuml-quickstart-a8.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29"><span class="section-number-3">4.8</span> 注释（Notes）</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+PlantUML 可以通过在脚本里使用 note 来添加注释文本块。<br  />
+</p>
+
+<p>
+note commands:<br  />
+</p>
+
+<p>
+note left<br  />
+note right<br  />
+note top<br  />
+note bottom<br  />
+</p>
+
+<p>
+PlantUML 用上面列表里的命令来标注一个注释块的开始，然后用 end note 来标注注释块的结束。同时 note 命令也允许使用单行定义一个文本块， 详见下面的例子。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a9.png" alt="plantuml-quickstart-a9.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline30" class="outline-3">
+<h3 id="orgheadline30"><span class="section-number-3">4.9</span> 分区（Partition）</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+通过分区关键词 partition 可以定义一个分区，并且可以使用 HTML 的 颜色码或颜色名来设置分区的背景色。在你申明一个活动时，PlantUML 会自动 的把这个活动对象放置到最后使用的分区中。当然，也可以使用 end partitio 关闭分区定义。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a10.png" alt="plantuml-quickstart-a10.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">4.10</span> 图形标题（Title the diagram）</h3>
+<div class="outline-text-3" id="text-4-10">
+<p>
+标题关键词 title 用来设置一个图形的标题文本，我们可以在 title 和 end title 两个关键词之间放置比较长的标题文本。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a11.png" alt="plantuml-quickstart-a11.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32"><span class="section-number-3">4.11</span> 皮肤（Skinparam）</h3>
+<div class="outline-text-3" id="text-4-11">
+<p>
+皮肤命令 skinparam 可以改变图形的颜色和字体。这些命令可以在以下 的位置中使用：<br  />
+</p>
+
+<p>
+在图形定义里使用，<br  />
+在包含的文件里使用，<br  />
+在一个配置文件里使用，这个配置文件一般由命令行或 ANT 的 Task 来提供。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a12.png" alt="plantuml-quickstart-a12.png" /><br  />
+</p>
+</div>
+
+<p>
+使用 skinparam activityShape octagon 命令可以把活动图形改成八角 形的。(好像没效果！)<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><span class="section-number-3">4.12</span> 完整示例（Complete Example）</h3>
+<div class="outline-text-3" id="text-4-12">
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-a13.png" alt="plantuml-quickstart-a13.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline34" class="outline-3">
+<h3 id="orgheadline34"><span class="section-number-3">4.13</span> 活动图 Beta</h3>
+<div class="outline-text-3" id="text-4-13">
+<p>
+Beta 版本的活动图简化了活动图的符号定义，从 V7947 这个版本开始，PlantUML 就开始引入了一些简化写法，当然到目前（20140627）为止还不是 很完善，但这个版本里的一些简化写法已经是 PlantUML 后续版本的发展方向。<br  />
+</p>
+
+<p>
+下文中将会用几个简单的示例来介绍 Beta 版活动图的新功能，有兴趣的朋友 也可以试一下，在使用新的写法之前需要把 GraphViz 更新到最新版本。<br  />
+</p>
+
+<p>
+关于更多的 PlantUML 版本更新信息可以参考官网页面（What's New？）<br  />
+简单活动（Simple Activity）<br  />
+</p>
+
+<p>
+在这个例子里，活动元素从一个 : 开始，然后到一个 ; 结束。 开始和结束符号，可以用 start 和 end 两个关键词来表示。之前版 本的开始和结束符都是用同一个符号 (*) 来表示的，个人觉得新的写法 逻辑更清晰，代码可读性更高。<br  />
+</p>
+
+<p>
+至于更多的文本格式，大家可以参考：Creole engine<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab1.png" alt="plantuml-quickstart-ab1.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35"><span class="section-number-3">4.14</span> 条件符号（Conditional）</h3>
+<div class="outline-text-3" id="text-4-14">
+<p>
+和之前一样，还是使用 if，then 和 else 关键词，但分支条件的 标签 Labels 可以直接写在关键词 then 和 else 的后面，并用小括 号括起来就可以了（如： (Labels) ）。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab2.png" alt="plantuml-quickstart-ab2.png" /><br  />
+</p>
+</div>
+
+<p>
+在新版本里除了使用 else 外，还新加了一个 elseif 关键词，有了这 个语法，我们就可以绘制一系列条件的活动图。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab3.png" alt="plantuml-quickstart-ab3.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline36" class="outline-3">
+<h3 id="orgheadline36"><span class="section-number-3">4.15</span> 重复循环（Repeat Loop）</h3>
+<div class="outline-text-3" id="text-4-15">
+<p>
+通过 repeat 和 repeat while 关键词可以创建循环结构的图形。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab4.png" alt="plantuml-quickstart-ab4.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline37" class="outline-3">
+<h3 id="orgheadline37"><span class="section-number-3">4.16</span> 条件循环（While Loop）</h3>
+<div class="outline-text-3" id="text-4-16">
+<p>
+“条件循环”和上面的“重复循环”不太一样，上面的“重复循环”是先执行一次 循环体里的内容，然后再执行断言条件，看是否重复执行循环体；而条件循 环则将断言放到了最前面，因此它是先判断是否满足条件再执行循环体里的 内容。<br  />
+</p>
+
+<p>
+要创建条件循环结构的图形可以通过使用 while 和 end while 两个关 键词来实现。如果要给条件分支加上标注，可以在 while 条件后加上一 个 is 关键词，然后用小括号括上要标注的内容；在 end while 后可 以直接用小括号括上要标注的内容。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab5.png" alt="plantuml-quickstart-ab5.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline38" class="outline-3">
+<h3 id="orgheadline38"><span class="section-number-3">4.17</span> 并行处理（Parallel Processing）</h3>
+<div class="outline-text-3" id="text-4-17">
+<p>
+fork，fork again 和 end fork 三个关键词用来表示并行处理结 构。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab6.png" alt="plantuml-quickstart-ab6.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline39" class="outline-3">
+<h3 id="orgheadline39"><span class="section-number-3">4.18</span> 注解的文本样式（Notes）</h3>
+<div class="outline-text-3" id="text-4-18">
+<p>
+注解里的文本样式是通过 Creole wiki syntax 来实现的。关于 Creole 引擎, 大家可以参考维基百科上的介绍。<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab7.png" alt="plantuml-quickstart-ab7.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline40" class="outline-3">
+<h3 id="orgheadline40"><span class="section-number-3">4.19</span> 颜色（Color）</h3>
+<div class="outline-text-3" id="text-4-19">
+<p>
+为活动元素指定背景色可以直接在活动开始标记 : 前加上颜色描述符：<br  />
+</p>
+
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab8.png" alt="plantuml-quickstart-ab8.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline41" class="outline-3">
+<h3 id="orgheadline41"><span class="section-number-3">4.20</span> 完整示例（Complete Example）</h3>
+<div class="outline-text-3" id="text-4-20">
+
+<div class="figure">
+<p><img src="../img/plantuml-quickstart-ab9.png" alt="plantuml-quickstart-ab9.png" /><br  />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Lyon-XD</p>
+<p class="date">Created: 2016-04-06 三 17:24</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

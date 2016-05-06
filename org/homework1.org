@@ -1,0 +1,18 @@
+#+BEGIN_SRC plantuml :file ../img/plantuml-homework1.png
+  Class class1 as "Sale"
+  Class class2 as "Salesperson"
+  Class class3 as "Customer"
+  Class class4 as "Product"
+  Class class5 as "Vehicle"
+  class1 -- "seller"class2
+  class1 -- "buyer"class3
+  class1 -- "item sold"class4
+  class1 -- "shipping mechanism"class5
+  Class class6 as "Corporate"
+  Class class7 as "Individual"
+  class3 <|-- class6
+  class3 <|-- class7
+  class5 <|-- Trunk
+  class5 <|-- Train
+  class5 <|-- Airplane
+#+END_SRC
